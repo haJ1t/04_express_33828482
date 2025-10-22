@@ -1,15 +1,15 @@
 // index.js
-// ----------------------------------------------------------
-// Main Express server setup for Lab 4 - Halit Ozger
-// ----------------------------------------------------------
+// Express server setup
 
 const express = require("express");
 const app = express();
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 
-// Load route handlers from routes/main.js
+// Import routes
 const mainRoutes = require("./routes/main");
 app.use("/", mainRoutes);
 
-// Start listening for HTTP requests
-app.listen(port, () => console.log(`🚀 Server running on port ${port}...`));
+// Start server
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
